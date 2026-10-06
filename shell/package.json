@@ -1,0 +1,46 @@
+{
+  "name": "abuz8-life",
+  "productName": "ABUZ8 Life",
+  "version": "2.0.0",
+  "description": "ABUZ8 LIFE - Electron shell over the live lifed.py daemon",
+  "main": "main.js",
+  "author": "ABUZ8 LLC",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.abuz8.life",
+    "productName": "ABUZ8 Life",
+    "executableName": "ABUZ8Life",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "assets/**"
+    ],
+    "asar": true,
+    "compression": "normal",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ABUZ8 Life",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3"
+  }
+}
